@@ -1,0 +1,49 @@
+<nav class="navbar">
+    <div class="logo">
+      <img src="../../../../images/logo.png" alt="Logo">
+    </div>
+    <div class="nav-links">
+      <p>Don't Have Account? <a routerLink="/register">Sign Up</a></p>
+    </div>
+  </nav>
+<div class="login-container">
+    <div class="login-left">
+        <div class="login-left-content">
+            <img src="../../../images/Coffee 1.jpg" alt="Login Image" class="login-image">
+            <span class="span-left"></span>
+            <p>Great to have</p>
+                <p class="sec">you back!</p>
+        </div>
+    </div>
+    <div class="login-right">
+        <div class="login-form-container">
+            <div class="login-header">
+                <h2>Sign in</h2>
+            </div>
+            <form (ngSubmit)="login(loginForm)" #loginForm="ngForm" class="login-form" novalidate>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" [(ngModel)]="Login.email" name="email" required email pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Enter your email">
+                    <div *ngIf="loginForm.submitted && loginForm.controls['email']?.invalid" class="error-message">
+                        Please provide a valid email.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" [(ngModel)]="Login.password" name="password" required minlength="6" placeholder="Enter your password">
+                    <div *ngIf="loginForm.submitted && loginForm.controls['password']?.invalid" class="error-message">
+                        Password must be at least 6 characters long.
+                    </div>
+                </div>
+                <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </div>
+
+                <div class="nav-links">
+                    <p><a routerLink="/reset-password">Forget Password</a></p>
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>

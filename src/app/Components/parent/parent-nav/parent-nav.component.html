@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg ">
+  <a class="navbar-brand" href="">
+    <img src="../../../../images/logo.png" alt="Logo" class="d-inline-block align-top">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/parent-nav']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/parent-nav/parent-profile', getProfileIdFromLocalStorage()]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/parent-nav/parent-child', getProfileIdFromLocalStorage()]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Aceppted Children</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/parent-nav/pend-child', getProfileIdFromLocalStorage()]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Pendding Children</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/parent-nav/add-child']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Add Child</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/parent-dashboard', getProfileIdFromLocalStorage()]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/parent-nav/parent-package" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Packages</a>
+      </li>
+    </ul>
+    <div class="navbar-nav">
+      <ng-container *ngIf="isLoggedIn()">
+        <a class="nav-link text-warning" routerLink="/logout" (click)="logout()">Log out</a>
+      </ng-container>
+      <ng-container *ngIf="!isLoggedIn()">
+        <a class="nav-link text-warning" routerLink="/login">Sign in</a>
+        <a class="btn btn-warning text-white" routerLink="/register">Sign up</a>
+      </ng-container>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

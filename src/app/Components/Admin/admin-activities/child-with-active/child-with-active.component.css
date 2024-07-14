@@ -1,0 +1,186 @@
+.main-content {
+  width: 100% !important;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  height: 100vh;
+  padding: 20px;
+  background: linear-gradient(
+      rgba(146, 165, 179, 0.4),
+      rgba(146, 165, 179, 0.4)
+    ),
+    url('https://img.freepik.com/free-photo/colorful-school-accessories-corner-white-background_23-2148050642.jpg?t=st=1719750907~exp=1719754507~hmac=3cfd4ef6ef2fd052483bd0e51c1b93a1d7c915ca10de28f18737fbf208a1d484&w=740');
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: #d4d4ff;
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.card-header {
+  background-color: #97a4eb;
+  color: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.card-header h3 {
+  margin: 0;
+  color: #fff;
+}
+
+.card-body {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.form-control:focus {
+  border-color: #d4d4ff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.text-danger {
+  color: #d9534f;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: #97a4eb;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #6e79bd;
+}
+
+@media (max-width: 1222px) {
+  .parent {
+    width: 30%;
+  }
+}
+
+@media (max-width: 969px) {
+  .parent {
+    display: none;
+  }
+
+  .card-header, .card-body {
+    padding: 10px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .col-md-6 {
+    width: 100%;
+  }
+}
+
+.baby {
+  margin-top: 30px;
+  margin-left: 400px;
+}
+
+.ng-select {
+  width: 100%;
+  background-color: #ccf0ff;
+  border-radius: 5px;
+  border-color: #d4d4ff;
+}
+
+.ng-select .ng-select-container {
+  border: 1px solid #d4d4ff;
+  background-color: #e6f7ff;
+  color: #d4d4ff;
+}
+
+.ng-select .ng-select-container .ng-input {
+  color: #d4d4ff;
+}
+
+.ng-select .ng-select-container .ng-input input {
+  background-color: #e6f7ff;
+  color: #d4d4ff;
+}
+
+.ng-select .ng-dropdown-panel {
+  border: 1px solid #d4d4ff;
+}
+
+.ng-select .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  background-color: #e6f7ff;
+  color: #d4d4ff;
+}
+
+.ng-select .ng-dropdown-panel .ng-dropdown-panel-items .ng-option:hover {
+  background-color: #ccf0ff;
+}
+
+.ng-select {
+    background-color:#d4d4ff;
+    border-radius: 5px;
+    border-color: #000000;
+    width: 504px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+/* تحسين مظهر زرار إضافة طفل إلى نشاط */
+.btn-add {
+    margin-top: 28px;
+    margin: 3px;
+}
+
+.baby{
+
+    margin-top: 30px;
+    margin-left:  30px;
+}
+
+h3{
+    margin-bottom: 50px;
+}
+
+#activity{
+    background-color:#d4d4ff;
+}

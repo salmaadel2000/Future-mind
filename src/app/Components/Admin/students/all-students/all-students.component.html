@@ -1,0 +1,76 @@
+<div class="main-content">
+  <h1 class="title">Accepted Students List</h1>
+
+  <!-- Add New Modal -->
+  <div class="modal fade" id="addNewModal" tabindex="-1" aria-labelledby="addNewModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="btn btn-primary" [routerLink]="['/admin-dashboard/accounts/add-applicant']">+ Add New</button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- <div class="modal-body">
+          <p>Would you like to add a child to an existing parent or a new parent?</p>
+          <button class="btn btn-primary btn-sm" (click)="addToExistingParent()">Add to Existing Parent</button>
+          <button class="btn btn-secondary btn-sm" (click)="addToNewParent()">Add to New Parent</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Student Cards -->
+  <section class="students">
+    <div class="info-cards">
+      <div class="card" *ngFor="let student of getLastThreeAcceptedStudents()">
+        <ng-container *ngIf="student; else noNewStudent">
+          <h5>{{ student.full_name }}</h5>
+          <button class="btn btn-primary btn-sm view-btn" [routerLink]="['/admin-dashboard/child-view', student.id]">View</button>
+        </ng-container>
+        <ng-template #noNewStudent>
+          <h5>No More Student</h5>
+        </ng-template>
+      </div>
+    </div>
+
+    <!-- Student Table -->
+    <header class="header">
+      <div class="header-actions">
+        <button class="btn btn-primary add" [routerLink]="['/admin-dashboard/accounts/add-applicant']">+ Add New</button>
+        <div class="search-container">
+          <input type="text" placeholder="Search" [(ngModel)]="searchTerm" (input)="searchChildren()">
+          <i class="fas fa-search"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="fixed-table">
+      <table class="table ">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Birth Date</th>
+            <th>Place of Birth</th>
+            <th>Gender</th>
+            <th>Current Residence</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let child of filteredStudents; trackBy: trackByStudentId">
+            <td>{{ child.full_name }}</td>
+            <td>{{ child.birthdate }}</td>
+            <td>{{ child.place_of_birth }}</td>
+            <td>{{ child.gender }}</td>
+            <td>{{ child.current_residence }}</td>
+            <td>
+              <button class="btn btn-success btn-sm add-level-btn w-10" (click)="showAddLevelModal(child)">Add Level</button>
+              <button class="btn btn-primary btn-sm view-btn" [routerLink]="['/admin-dashboard/child-view', child.id]">View</button>
+              <button class="btn btn-warning btn-sm edit-btn w-20" [routerLink]="['/admin-dashboard/edit-child', child.id]">Edit</button>
+              <button class="btn btn-danger btn-sm delete-btn" (click)="deleteStudent(child)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>

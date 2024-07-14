@@ -1,0 +1,91 @@
+<div class="main">
+  <img src="../../../../../images/Screenshot_2024-06-27_212737-removebg-preview.png" class="frist-img"/>
+  <img src="../../../../../images/Screenshot_2024-06-27_212747-removebg-preview.png" class="sec-img"/>
+  <img src="../../../../../images/Screenshot_2024-06-27_212752-removebg-preview.png" class="thered-img"/>
+
+  <img src="../../../../images/200w-unscreen.gif" class="main-img"/>
+<div class="container">
+  <div class="card">
+      <div class="card-header">
+          <h2>Edit Parent </h2>
+      </div>
+      <div class="card-body">
+          <form (ngSubmit)="submitForm()" #parentForm="ngForm">
+              <!-- First Name and Last Name -->
+              <div class="row mb-3">
+                  <div class="col-md-6">
+                      <label for="first_name" class="form-label">First Name</label>
+                      <input type="text" id="first_name" name="first_name" class="form-control" [(ngModel)]="parent.first_name" required>
+                      <div *ngIf="parentForm.controls['first_name'].invalid && parentForm.controls['first_name'].touched" class="text-danger">First Name is required</div>
+                  </div>
+                  <div class="col-md-6">
+                      <label for="last_name" class="form-label">Last Name</label>
+                      <input type="text" id="last_name" name="last_name" class="form-control" [(ngModel)]="parent.last_name" required>
+                      <div *ngIf="parentForm.controls['last_name'].invalid && parentForm.controls['last_name'].touched" class="text-danger">Last Name is required</div>
+                  </div>
+              </div>
+
+              <!-- Educational Qualification and Job Title -->
+              <div class="row mb-3">
+                  <div class="col-md-6">
+                      <label for="educational_qualification" class="form-label">Educational Qualification</label>
+                      <input type="text" id="educational_qualification" name="educational_qualification" class="form-control" [(ngModel)]="parent.educational_qualification">
+                  </div>
+                  <div class="col-md-6">
+                      <label for="job_title" class="form-label">Job Title</label>
+                      <input type="text" id="job_title" name="job_title" class="form-control" [(ngModel)]="parent.job_title">
+                  </div>
+              </div>
+
+              <!-- Workplace and Work Phone -->
+              <div class="row mb-3">
+                  <div class="col-md-6">
+                      <label for="workplace" class="form-label">Workplace</label>
+                      <input type="text" id="workplace" name="workplace" class="form-control" [(ngModel)]="parent.workplace">
+                  </div>
+                  <div class="col-md-6">
+                      <label for="work_phone" class="form-label">Work Phone</label>
+                      <input type="text" id="work_phone" name="work_phone" class="form-control" [(ngModel)]="parent.work_phone">
+                  </div>
+              </div>
+
+              <!-- Personal Phone and Address -->
+              <div class="row mb-3">
+                  <div class="col-md-6">
+                      <label for="personal_phone" class="form-label">Personal Phone</label>
+                      <input type="text" id="personal_phone" name="personal_phone" class="form-control" [(ngModel)]="parent.personal_phone">
+                  </div>
+                  <div class="col-md-6">
+                      <label for="address" class="form-label">Address</label>
+                      <input type="text" id="address" name="address" class="form-control" [(ngModel)]="parent.address">
+                  </div>
+              </div>
+
+              <!-- Home Phone and Street Number -->
+              <div class="row mb-3">
+                  <div class="col-md-6">
+                      <label for="home_phone" class="form-label">Home Phone</label>
+                      <input type="text" id="home_phone" name="home_phone" class="form-control" [(ngModel)]="parent.home_phone">
+                  </div>
+                  <div class="col-md-6">
+                      <label for="street_number" class="form-label">Street Number</label>
+                      <input type="text" id="street_number" name="street_number" class="form-control" [(ngModel)]="parent.street_number">
+                  </div>
+              </div>
+
+              <!-- Apartment Number -->
+              <div class="row mb-3">
+                  <div class="col-md-6">
+                      <label for="apartment_number" class="form-label">Apartment Number</label>
+                      <input type="text" id="apartment_number" name="apartment_number" class="form-control" [(ngModel)]="parent.apartment_number">
+                  </div>
+                  <div class="col-md-6 buttons">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,159 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* منع التمرير */
+}
+
+.main {
+  width: 120%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  padding: 20px;
+
+}
+
+
+
+.card {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-right: 200px;
+
+}
+
+.card-header {
+  background-color: #97a4eb;
+  color: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.card-header h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.card-body {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.text-danger {
+  color: #d9534f;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: #97a4eb;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #6e79bd;
+}
+
+@media (max-width: 1222px) {
+  .baby {
+    width: 30%;
+  }
+  .card {
+    width: 60%;
+  }
+  .sec-img {
+    left: 70%;
+  }
+  .frist-img {
+    right: 10%;
+  }
+  .thered-img {
+    left: 60%;
+  }
+}
+
+@media (max-width: 969px) {
+  .baby {
+    display: none;
+  }
+  .card {
+    width: 80%;
+  }
+  .sec-img {
+    display: none;
+  }
+  .frist-img {
+    display: none;
+  }
+  .thered-img {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .card-header,
+  .card-body {
+    padding: 15px;
+  }
+  .btn-primary {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 100%;
+  }
+  .card-header,
+  .card-body {
+    padding: 10px;
+  }
+  .btn-primary {
+    width: 100%;
+    padding: 10px;
+  }
+  .add-welcome {
+    font-size: 24px;
+    left: 10px;
+    top: 10px;
+  }
+}

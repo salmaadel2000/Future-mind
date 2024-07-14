@@ -1,0 +1,16 @@
+<div class="packages-section">
+  <h2>Packages</h2>
+  <img src="../../../../images/Image 62.png" style="width: 600px;" class="main-img"/>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <div class="packages-container" *ngIf="!errorMessage">
+    <div *ngFor="let pkg of packages" class="package-card" [ngClass]="getCardClass(pkg.id)">
+      <h3>{{ pkg.name }}</h3>
+      <ul>
+        <li *ngFor="let advantage of pkg.advantages.split(', ')">{{ advantage }}</li>
+      </ul>
+      <img [src]="getImageSrc(pkg.id)" alt="Plant" class="decorative-img">
+    </div>
+  </div>
+</div>

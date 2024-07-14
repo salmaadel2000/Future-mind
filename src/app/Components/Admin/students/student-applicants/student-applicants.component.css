@@ -1,0 +1,391 @@
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.main-content {
+  width: 100% !important;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  background: linear-gradient(
+      rgba(146, 165, 179, 0.4),
+      rgba(146, 165, 179, 0.4)
+    ),
+    url('https://img.freepik.com/free-photo/colorful-school-accessories-corner-white-background_23-2148050642.jpg?t=st=1719750907~exp=1719754507~hmac=3cfd4ef6ef2fd052483bd0e51c1b93a1d7c915ca10de28f18737fbf208a1d484&w=740');
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.main-content > * {
+  position: relative;
+  z-index: 2;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.filter-options {
+  display: flex;
+  justify-content: flex-start;
+  margin-right: auto; }
+
+.filter-btn {
+  padding: 10px 10px;
+  border: none;
+  background-color: #fac26a;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 2px;
+}
+
+.filter-btn:nth-child(2) {
+  background-color: #a7a7a7;
+}
+
+.filter-btn:nth-child(3) {
+  background-color: #8cdc54;
+}
+
+.filter-btn:nth-child(4) {
+  background-color: #f75b6b;
+}
+
+.filter-btn:hover {
+  background-color: #92a7be;
+}
+
+.left-actions {
+  display: flex;
+  align-items: center;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 10px;
+}
+
+.search-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+/* .search-container i {
+  position: absolute;
+  right: 10px;
+  color: #888;
+}
+
+
+.student-list table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; 
+  min-width: 600px; 
+} */
+
+.student-list th,
+.student-list td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: center; 
+}
+
+.student-list th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.student-list .status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.status-pending {
+  color: #a7a7a7; 
+}
+
+.status-accepted {
+  color: #8cdc54; 
+}
+
+.status-rejected {
+  color: #dc3545; 
+}
+
+.view-btn, .btn-primary {
+  padding: 5px 10px;
+  background-color: #65c7fc;
+  border-color: #65c7fc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.view-btn:hover, .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+
+.info-sections {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-section {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 250px;
+}
+
+.modal-footer .btn {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.modal-footer .btn-success {
+  background-color: #8cdc54;
+  color: white;
+}
+
+.modal-footer .btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Modal Styles */
+.modal-content {
+  border-radius: 10px;
+}
+
+.modal-header {
+  background-color: #65c7fc;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 15px;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  padding: 15px;
+  border-top: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-footer .btn {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 20px;
+  width: 300px; }
+
+.search-container input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px; 
+}
+
+.search-container i {
+  position: absolute;
+  right: 10px;
+  color: #888;
+}
+
+.header .header-actions .btn {
+  margin-left: 5px;
+  width: 100px; 
+  background-color: #65c7fc;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.header .header-actions .btn:hover {
+  background-color: #96bde9;
+}
+
+.info-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* margin-bottom: 90px; */
+  overflow: hidden;
+  /* margin: 30px; */
+  width: 1000px;
+  /* height: auto; */
+}
+
+.info-cards .card {
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  flex: 1 1 calc(33.33% - 10px);
+  margin: 5px;
+  text-align: center;
+  font-weight: 100;
+  font-size: 100px;
+  text-shadow: #6c757d;
+  margin-bottom: 40px;
+}
+
+
+.info-cards .card:first-child {
+  background-color: #fcf6f7;
+}
+
+.info-cards .card:nth-child(2) {
+  background-color: #f1edf7;
+}
+
+.info-cards .card:nth-child(3) {
+  background-color: #e6f1f7;
+}
+
+.info-cards .card .btn-primary {
+  background-color: #65c7fc;
+  border-color: #65c7fc;
+  width: 80px;
+  padding: 5px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.info-cards .card .btn-primary:hover {
+  background-color: #7ea6d4;
+  border-color: #70a4df;
+}
+
+.title{
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  color: #8a8c8d;
+  font-weight: 600;
+  font-style: italic;
+  text-shadow: 1px 1px 1px #bbbbbb;
+  text-align: center;
+  justify-content: center;
+  margin-left: 0px;
+}
+
+/* Modal Styles */
+.modal-lg {
+  max-width: 60%;
+}
+
+.modal-content {
+  border-radius: 10px;
+}
+
+.modal-header {
+  background-color: #65c7fc;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 15px;
+}
+
+.modal-body {
+  padding: 20px; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-sections {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Added gap between sections */
+}
+
+.info-section {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 48%; /* Ensure sections fit side by side */
+}
+
+.modal-footer {
+  padding: 20px;
+  border-top: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-footer .btn {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.modal-footer .btn-success {
+  background-color: #8cdc54;
+  color: white;
+}
+
+.modal-footer .btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.info-cards {
+  display: flex ;
+  margin: auto;
+}

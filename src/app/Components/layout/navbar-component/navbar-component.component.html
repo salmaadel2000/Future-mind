@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">
+    <img src="../../../../images/logo.png" alt="Logo" class="d-inline-block align-top">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/activities" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Activities</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/packages" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Packages</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about-us" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Contact Us</a>
+      </li>
+      <li class="nav-item" *ngIf="isLoggedIn()">
+        <a class="nav-link" [routerLink]="['/parent-dashboard', parentId]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Dashboard</a>
+      </li>
+    </ul>
+    <div class="navbar-nav">
+      <ng-container *ngIf="isLoggedIn()">
+        <a class="nav-link text-warning" routerLink="/logout" (click)="logout()">Log out</a>
+      </ng-container>
+      <ng-container *ngIf="!isLoggedIn()">
+        <a class="nav-link text-warning" routerLink="/login">Sign in</a>
+        <a class="btn btn-warning text-white" routerLink="/register">Sign up</a>
+      </ng-container>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

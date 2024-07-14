@@ -1,0 +1,60 @@
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playwrite+FR+Trad&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+US+Modern:wght@100..400&family=Rubik&display=swap" rel="stylesheet">
+
+
+<div class="main-content">
+  <div class="container">
+    <div class="header">
+      <h2 class="title">Activities</h2>
+      <div class="header-actions">
+        <button type="button" class="btn btn-primary  btn-yara" (click)="showAddActivityModal()">Add Activity</button>
+        <button type="button" class="btn btn-primary btn-yara" [routerLink]="['/admin-dashboard/child-with-active']">Add Activity for child</button>
+      </div>
+    </div>
+
+    <div *ngIf="showActivityTable" class="active">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Activity Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let activity of activities">
+            <td>{{ activity.activity_name }}</td>
+            <td>{{ activity.description }}</td>
+            <td>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn  btn-sm btn-blue " (click)="editSimilarActivities(activity.activity_name)">Edit</button>
+                <button type="button" class="btn btn-danger btn-sm " (click)="deleteSimilarActivities(activity.activity_name)">Delete</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div *ngIf="showChildrenTable">
+      <h2>Children</h2>
+      <table class="table table-striped parent-list">
+        <thead>
+          <tr>
+            <th>Child Name</th>
+            <th>Activities</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let child of childrenWithActivities">
+            <td>{{ child.child_name }}</td>
+            <td>
+              <ul>
+                <li *ngFor="let activity of child.activities">{{ activity.activity_name }}</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="main-content">
+  <div class="card">
+    <div class="card-header">
+      <h3>Add Child to Activity</h3>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="addChildToActivity()" #childActivityForm="ngForm" class="needs-validation" novalidate>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>
+                <label for="activity" class="form-label">Select Activity</label>
+              </td>
+              <td>
+                <select id="activity" class="form-control" [(ngModel)]="selectedActivityName" name="activity" required>
+                  <option *ngFor="let activity of activities" [value]="activity.activity_name">{{ activity.activity_name }}</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="child" class="form-label">Select Child (Search By Name)</label>
+              </td>
+              <td>
+                <ng-select style="background-color : #d4d4ff; justify-content: center;" class="ng-select" [items]="children"
+                    bindLabel="full_name"
+                    bindValue="id"
+                    [(ngModel)]="selectedChildId"
+                    name="child"
+                    placeholder=""
+                    [searchable]="true"
+                    [closeOnSelect]="true"
+                    required>
+                </ng-select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="text-center">
+                <button  Class="btn btn-primary btn-add mr-2" [routerLink]="['/admin-dashboard/activities']">Back</button>
+                <button type="submit" class="btn btn-primary btn-add">Add Child to Activity</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>

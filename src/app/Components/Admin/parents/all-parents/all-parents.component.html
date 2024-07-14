@@ -1,0 +1,175 @@
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playwrite+FR+Trad&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+US+Modern:wght@100..400&family=Rubik&display=swap" rel="stylesheet">
+
+<div class="main-content">
+  <section class="parents">
+    <h1 class="title">All Parents</h1>
+  <div class="info-cards">
+      <div class="card" *ngFor="let parent of getLastThreeNewParents(); let i = index" [ngClass]="'card-' + (i + 1)">
+        <ng-container *ngIf="parent.id !== 0; else noParent">
+          <h5>{{ parent.first_name }} {{ parent.last_name }}</h5>
+          <button class="btn btn-primary btn-sm" (click)="viewParent(parent)">View</button>
+        </ng-container>
+        <ng-template #noParent>
+          <div class="no-parents">
+            <h5>No Parents</h5>
+          </div>
+        </ng-template>
+      </div>
+      <ng-container *ngIf="getLastThreeNewParents().length < 3">
+        <div class="card" *ngFor="let index of [1, 2, 3].slice(getLastThreeNewParents().length)">
+          <div class="no-parents">
+            <h5>No Parents</h5>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <header class="header">
+      <div class="header-actions">
+        <div class="filter-options">
+          <button class="filter-btn" (click)="filterParents('all')" style="display: none;"></button>
+        </div>
+        <button class="btn btn-primary add" [routerLink]="['/admin-dashboard/accounts/add-applicant']">+ Add New</button>
+        <div class="search-container">
+          <input type="text" placeholder="Search" [(ngModel)]="searchTerm" (input)="searchParents()">
+          <i class="fas fa-search"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="fixed-table">
+    <div class="parent-list fixed-table table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Job Title</th>
+            <th>Personal Phone</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let parent of filteredParents">
+            <td>{{ parent.first_name }}</td>
+            <td>{{ parent.last_name }}</td>
+            <td>{{ parent.job_title }}</td>
+            <td>{{ parent.personal_phone }}</td>
+            <td>
+              <div class="btn-group" role="group">
+                <button class="btn btn-primary btn-sm" (click)="viewParent(parent)">View</button>
+                <button class="btn btn-secondary btn-sm" (click)="editParent(parent)">Edit</button>
+                <button class="btn btn-danger btn-sm" (click)="deleteParent(parent.id)">Delete</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<!-- Parent Modal -->
+<div class="modal fade custom-modal-width" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-m">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ selectedParent?.first_name }} {{ selectedParent?.last_name }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="selectedParent ">
+          <h5>General Information</h5>
+          <table class="table table-bordered table-striped">
+            <tbody>
+              <tr>
+                <td><strong>First Name:</strong></td>
+                <td>{{ selectedParent.first_name }}</td>
+              </tr>
+              <tr>
+                <td><strong>Last Name:</strong></td>
+                <td>{{ selectedParent.last_name }}</td>
+              </tr>
+              <tr>
+                <td><strong>Educational Qualification:</strong></td>
+                <td>{{ selectedParent.educational_qualification }}</td>
+              </tr>
+              <tr>
+                <td><strong>Job Title:</strong></td>
+                <td>{{ selectedParent.job_title }}</td>
+              </tr>
+              <tr>
+                <td><strong>Phone:</strong></td>
+                <td>{{ selectedParent.personal_phone }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <h5>Children</h5>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let child of selectedParent.children">
+                <td>{{ child.full_name }}</td>
+                <td>
+                  <button class="btn btn-sm btn-primary" (click)="viewChild(child)">View</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <ng-template #noChildren>
+            <p>No children yet.</p>
+          </ng-template>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Child Modal -->
+<div class="modal fade custom-modal-width" id="childModal" tabindex="-1" aria-labelledby="childModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-m ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ selectedChild?.full_name }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center mb-3">
+          <img [src]="getChildPhotoUrl(selectedChild)" alt="Child Photo" class="img-fluid rounded" style="width: 150px;">
+        </div>
+        <table class="table table-bordered table-striped">
+          <tbody>
+            <tr>
+              <td><strong>Name:</strong></td>
+              <td>{{ selectedChild?.full_name }}</td>
+            </tr>
+            <tr>
+              <td><strong>Birthdate:</strong></td>
+              <td>{{ selectedChild?.birthdate }}</td>
+            </tr>
+            <tr>
+              <td><strong>Place of Birth:</strong></td>
+              <td>{{ selectedChild?.place_of_birth }}</td>
+            </tr>
+            <tr>
+              <td><strong>Gender:</strong></td>
+              <td>{{ selectedChild?.gender }}</td>
+            </tr>
+            <tr>
+              <td><strong>Current Residence:</strong></td>
+              <td>{{ selectedChild?.current_residence }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

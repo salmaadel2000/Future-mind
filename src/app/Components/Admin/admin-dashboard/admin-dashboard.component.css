@@ -1,0 +1,186 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.logo img {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding-bottom: 30px;
+
+}
+
+.admin-dashboard {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  width: 250px;
+  margin-right: 0;
+  background-color: #c0e4fc;
+  padding: 0px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  transition: width 0.3s; /* Transition for smooth resizing */
+  box-shadow: #333  inset 2px;
+}
+
+
+.sidebar nav ul {
+  list-style: none;
+  margin-left: 0px;
+}
+
+.sidebar nav ul li {
+  margin: 15px 0;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 12;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar nav ul li i {
+  margin-right: 10px;
+  font-size: 18px;
+
+}
+
+.dropdown {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.dropdown li {
+  margin: 5px 0;
+}
+
+.main-content {
+  margin-left: 250px; /* نفس عرض السايد بار */
+  /* padding: 20px; */
+  width: 100vh;
+  /* margin-top: auto; */
+  flex-grow: 1;
+  /* overflow-y: auto; */
+ 
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Reduce sidebar width on smaller screens */
+  }
+
+  .main-content {
+    margin-left: 200px; /* Adjust content margin accordingly */
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 175px; /* Further reduce sidebar width on very small screens */
+  }
+
+  .main-content {
+    margin-left: 150px; /* Adjust content margin accordingly */
+  }
+
+  ul{
+    padding: 10px;
+    font-size: 16px; 
+    
+  }
+
+  .sidebar nav ul li  {
+    font-size: 16px; /* Reduce font size for smaller screens */
+  
+  }
+  .sidebar nav ul li a {
+    font-size: 16px; /* Reduce font size for smaller screens */
+    
+  }
+
+  .logo img {
+    width: 70px; /* Adjust logo size for smaller screens */
+    
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100px; /* Minimal sidebar width */
+  }
+
+  .main-content {
+    margin-left: 100px; /* Adjust content margin accordingly */
+  }
+  ul{
+    padding: 2px;
+    font-size: 12px; 
+    
+  }
+
+  .sidebar nav ul li a {
+    font-size: 10px; /* Reduce font size for very small screens */
+  }
+
+
+  .sidebar nav ul li i {
+    margin-right: 5px; /* Adjust icon margin */
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .sidebar {
+    width: 100px; /* Minimal sidebar width */
+  }
+
+  .main-content {
+    margin-left: 100px; /* Adjust content margin accordingly */
+  }
+
+  .sidebar nav ul li a {
+    font-size: 12px; /* Reduce font size for very small screens */
+  }
+
+
+  .sidebar nav ul li i {
+    margin-right: 3px; /* Adjust icon margin */
+  }
+}
+
+/* admin-dashboard.component.css */
+
+/* تأثير عند التمرير فوق العنصر */
+.nav-item:hover {
+  background-color: #f0f0f0; /* يمكنك تعديل اللون حسب رغبتك */
+  cursor: pointer;
+}
+
+/* جعل الرابط نشطًا */
+.nav-item.active {
+  background-color: #def3f7; /* يمكنك تعديل اللون حسب رغبتك */
+  font-weight: bold;
+  border-left: 4px solid #65c7fc; /* تحديد الشريط الجانبي */
+}
+
+/* مثال على كيفية تخصيص الروابط */
+.nav-item a {
+  text-decoration: none;
+  color: inherit;
+}
+

@@ -1,0 +1,245 @@
+.main-content {
+  /* width: 100% !important; */
+  width: 100% !important;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  background-image: url(https://img.freepik.com/free-photo/colorful-school-accessories-corner-white-background_23-2148050642.jpg?t=st=1719750907~exp=1719754507~hmac=3cfd4ef6ef2fd052483bd0e51c1b93a1d7c915ca10de28f18737fbf208a1d484&w=740);
+}
+
+.main-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(146, 165, 179, 0.4);
+  pointer-events: none; /* Ensures the overlay does not interfere with interaction */
+}
+
+
+/* تحسين مظهر أزرار الفلترة */
+.filter-options {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  margin: 2px;
+  margin-bottom: 60px;
+  width: 900px;
+  text-align: center;
+  Z-index:2 !important;
+
+}
+
+.filter-btn {
+  border: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: 100;
+  text-shadow: 1px 1px 1px #3a3a3a;
+  margin: 5px;
+  height: 50px;
+  font-size: 25px;
+  margin-top: 50px;
+  Z-index:2;
+justify-self: start;
+}
+
+.btn-yara.btn-primary {
+  background-color: #65c7fc;
+  border-color: #65c7fc;
+  Z-index:2;
+
+}
+
+.btn-yara.btn-danger {
+  background-color: #f36977;
+  border-color: #f36977;
+}
+
+.filter-btn.btn-primary {
+  background-color: #fadfb3;
+}
+
+.filter-btn.btn-secondary {
+  background-color: #f5bbbb;
+}
+
+.filter-btn.btn-success {
+  background-color: #d1fab3;
+}
+
+.filter-btn.btn-danger {
+  background-color: #f09ba3;
+}
+
+.filter-btn:hover {
+  background-color: #92a7be;
+}
+
+/* تحسين مظهر الجدول */
+.fixed-table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  table-layout: fixed; /* تثبيت حجم الجدول */
+  font-size: 18px; /* تكبير النص */
+  text-align: center; /* جعل النص في وسط الخلايا */
+  Z-index:2;
+
+}
+
+
+
+.fixed-table thead th {
+  background-color: #ffffff; /* لون خلفية أبيض للـ th */
+  color: #333;
+  border-bottom: 2px solid #ddd;
+}
+
+.fixed-table.table-primary thead th {
+  background-color: #fadfb3; /* لون خلفية برتقالي */
+}
+
+.fixed-table.table-secondary thead th {
+  background-color: #f5bbbb; /* لون خلفية زهري */
+}
+
+.fixed-table.table-success thead th {
+  background-color: #d1fab3; /* لون خلفية أخضر */
+}
+
+.fixed-table.table-danger thead th {
+  background-color: #dc3545; /* لون خلفية أحمر */
+}
+
+.fixed-table tbody td {
+  background-color: #ffffff; /* لون خلفية أبيض للـ td */
+  padding: 20px; /* تكبير النص */
+}
+
+.fixed-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+
+
+/* تحسين مظهر زرار الإضافة وحقل البحث */
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align to the left */
+  Z-index:2;
+
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 10px; /* Add margin to separate from add button */
+  Z-index:2;
+}
+
+.search-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  height: 40px;
+
+}
+
+.search-container i {
+  position: absolute;
+  right: 10px;
+  color: #888;
+}
+
+.add-level-btn {
+  margin-left: 10px; /* Add margin to separate from search box */
+  background-color: #65c7fc;
+  border-color: #65c7fc;
+  Z-index:2;
+
+}
+
+
+
+
+
+.title{
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  color: #28698a;
+  font-weight: 600;
+  font-style: italic;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  Z-index:2 !important;
+}
+
+
+
+
+/* Media Queries for Responsive Design */
+.table-responsive {
+  overflow-x: auto; /* Allows horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+}
+
+@media (max-width: 768px) {
+  .fixed-table tbody td {
+    display: block;
+    width: 100%;
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+    white-space: pre-wrap; /* Allow text wrapping */
+  }
+
+  .fixed-table tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 10px;
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+
+  .fixed-table tbody tr {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .fixed-table thead {
+    display: none;
+  }
+}
+
+.subject-list{
+  Z-index:2;
+}
+
+.btn-yara{
+  margin-right: 4px;
+}
+
+/* .table-container{
+  height: 400px;
+  overflow-y: scroll;
+} */

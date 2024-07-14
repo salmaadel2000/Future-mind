@@ -1,0 +1,18 @@
+<div class="levels-section">
+  <h2>Levels</h2>
+  <img src="../../../../images/Image 62.png" style="width: 600px;" class="centered-image" />
+  <div class="levels-container wrapper">
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <ng-container *ngIf="!errorMessage">
+      <div class="level-card card" *ngFor="let curriculum of curriculums" [ngClass]="getCardClass(curriculum.id!)">
+        <div class="image-container img-box">
+          <img [src]="getImageSrc(curriculum.id!)" alt="Level Image">
+        </div>
+        <div class="text-container content">
+          <h3>{{ curriculum.level }}</h3>
+          <p>{{ curriculum.description }}</p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

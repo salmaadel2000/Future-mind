@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h3>Create Parent</h3>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+        <div class="row mb-1">
+          <div class="col-md-6">
+            <label for="first_name" class="form-label">First Name</label>
+            <input name="first_name" [(ngModel)]="parent.first_name" class="form-control" required #firstName="ngModel" placeholder="Enter first name">
+            <div *ngIf="firstName.invalid && firstName.touched" class="text-danger">First Name is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input name="last_name" [(ngModel)]="parent.last_name" class="form-control" required #lastName="ngModel" placeholder="Enter last name">
+            <div *ngIf="lastName.invalid && lastName.touched" class="text-danger">Last Name is required.</div>
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col-md-6">
+            <label for="educational_qualification" class="form-label">Educational Qualification</label>
+            <input name="educational_qualification" [(ngModel)]="parent.educational_qualification" class="form-control" required #educationalQualification="ngModel" placeholder="Enter educational qualification">
+            <div *ngIf="educationalQualification.invalid && educationalQualification.touched" class="text-danger">Educational Qualification is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="job_title" class="form-label">Job Title</label>
+            <input name="job_title" [(ngModel)]="parent.job_title" class="form-control" required #jobTitle="ngModel" placeholder="Enter job title">
+            <div *ngIf="jobTitle.invalid && jobTitle.touched" class="text-danger">Job Title is required.</div>
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col-md-6">
+            <label for="workplace" class="form-label">Workplace</label>
+            <input name="workplace" [(ngModel)]="parent.workplace" class="form-control" required #workplace="ngModel" placeholder="Enter workplace">
+            <div *ngIf="workplace.invalid && workplace.touched" class="text-danger">Workplace is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="work_phone" class="form-label">Work Phone</label>
+            <input name="work_phone" [(ngModel)]="parent.work_phone" class="form-control" required #workPhone="ngModel" placeholder="Enter work phone">
+            <div *ngIf="workPhone.invalid && workPhone.touched" class="text-danger">Work Phone is required.</div>
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col-md-6">
+            <label for="personal_phone" class="form-label">Personal Phone</label>
+            <input name="personal_phone" [(ngModel)]="parent.personal_phone" class="form-control" required #personalPhone="ngModel" placeholder="Enter personal phone">
+            <div *ngIf="personalPhone.invalid && personalPhone.touched" class="text-danger">Personal Phone is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="address" class="form-label">Address</label>
+            <input name="address" [(ngModel)]="parent.address" class="form-control" required #address="ngModel" placeholder="Enter address">
+            <div *ngIf="address.invalid && address.touched" class="text-danger">Address is required.</div>
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col-md-6">
+            <label for="home_phone" class="form-label">Home Phone</label>
+            <input name="home_phone" [(ngModel)]="parent.home_phone" class="form-control" required #homePhone="ngModel" placeholder="Enter home phone">
+            <div *ngIf="homePhone.invalid && homePhone.touched" class="text-danger">Home Phone is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="street_number" class="form-label">Street Number</label>
+            <input name="street_number" [(ngModel)]="parent.street_number" class="form-control" required #streetNumber="ngModel" placeholder="Enter street number">
+            <div *ngIf="streetNumber.invalid && streetNumber.touched" class="text-danger">Street Number is required.</div>
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col-md-6">
+            <label for="apartment_number" class="form-label">Apartment Number</label>
+            <input name="apartment_number" [(ngModel)]="parent.apartment_number" class="form-control" required #apartmentNumber="ngModel" placeholder="Enter apartment number">
+            <div *ngIf="apartmentNumber.invalid && apartmentNumber.touched" class="text-danger">Apartment Number is required.</div>
+          </div>
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-primary btn-next" [disabled]="registerForm.invalid">Next</button>
+          </div>
+        </div>
+        <div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
+      </form>
+    </div>
+  </div>
+</div>

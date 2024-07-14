@@ -1,0 +1,107 @@
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playwrite+FR+Trad&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+US+Modern:wght@100..400&family=Rubik&display=swap" rel="stylesheet">
+
+<div class="main-content">
+  <header class="header title">
+    <h1>Students Applicants List</h1>
+  </header>
+  <section class="students">
+    <div class="info-cards">
+      <div class="card" *ngFor="let student of getLastThreePendingStudents()">
+        <ng-container *ngIf="student; else noNewStudent">
+          <h5>{{student.full_name}}</h5>
+          <button class="btn btn-sm btn-primary" (click)="viewStudent(student)">View</button>
+        </ng-container>
+        <ng-template #noNewStudent>
+          <h5>No Pending Student</h5>
+        </ng-template>
+      </div>
+    </div>
+    <div class="student-list">
+      <div class="header-actions">
+        <div class="filter-options">
+          <button class="filter-btn" (click)="filterStudents('student-applicants')">Student Applicants</button>
+          <button class="filter-btn" (click)="filterStudents('pending')">Pending</button>
+          <button class="filter-btn" (click)="filterStudents('accepted')">Accepted</button>
+          <button class="filter-btn" (click)="filterStudents('rejected')">Rejected</button>
+        </div>
+        <div class="left-actions">
+          <button class="btn btn-primary" [routerLink]="['/admin-dashboard/accounts/add-applicant']">+ Add New</button>
+          <div class="search-container">
+            <input type="text" placeholder="Search" [(ngModel)]="searchTerm" (input)="searchStudents()">
+            <i class="fas fa-search"></i>
+          </div>
+        </div>
+      </div>
+      <div class ="table-container">
+      <table class="table text-capitalize mt-3 ">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Birth-Date</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of filteredStudents; trackBy: trackByStudentId" [ngClass]="getStatusClass(student.application?.status)">
+            <td>{{ student.full_name }}</td>
+            <td>{{ student.birthdate }}</td>
+            <td>{{ student.parent?.user?.phone }}</td>
+            <td>{{ student.parent?.user?.email }}</td>
+            <td [ngClass]="getStatusTextClass(student.application?.status)">{{ student.application?.status }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="viewStudent(student)">View</button>
+              <button class="btn" (click)="viewNotification(student)">🔔</button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+    </div>
+  </section>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+  <div class="modal-dialog model-l">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ selectedStudent?.full_name }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="info-sections">
+          <div class="info-section">
+            <h3>General Information</h3>
+            <p><strong>Name:</strong> {{ selectedStudent?.full_name }}</p>
+            <p><strong>D.O.B.:</strong> {{ selectedStudent?.birthdate }}</p>
+            <p><strong>Gender:</strong> {{ selectedStudent?.gender }}</p>
+            <p><strong>Home Address:</strong> {{ selectedStudent?.current_residence }}</p>
+          </div>
+          <div class="info-section">
+            <h3>Family Information</h3>
+            <p><strong>First Name:</strong> {{ selectedStudent?.parent?.first_name }}</p>
+            <p><strong>Last Name:</strong> {{ selectedStudent?.parent?.last_name }}</p>
+            <p><strong>Job Title:</strong> {{ selectedStudent?.parent?.job_title }}</p>
+            <p><strong>Address:</strong> {{ selectedStudent?.parent?.address }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <!-- Show accept/reject buttons only if the status is 'Pending' -->
+        <button *ngIf="selectedStudent?.application?.status?.toLowerCase() === 'pending'"
+          type="button"
+          class="btn btn-success"
+          (click)="confirmUpdateStudentStatus('accepted')">Accept</button>
+        <button *ngIf="selectedStudent?.application?.status?.toLowerCase() === 'pending'"
+          type="button"
+          class="btn btn-danger"
+          (click)="confirmUpdateStudentStatus('rejected')">Reject</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="container">
+    <img src="../../../../../images/baby.png" class="baby"/>
+    <div class="card">
+      <div class="card-header">
+        <h2>Register Child</h2>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+          <div class="mb-3">
+            <label for="parentId" class="form-label">Parent ID</label>
+            <input name="parentId" [(ngModel)]="child.parent_id" class="form-control" required #parentId="ngModel">
+            <div *ngIf="parentId.invalid && parentId.touched" class="text-danger">Parent ID is required.</div>
+          </div>
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input name="fullName" [(ngModel)]="child.full_name" class="form-control" required #fullName="ngModel">
+            <div *ngIf="fullName.invalid && fullName.touched" class="text-danger">Full Name is required.</div>
+          </div>
+          <div class="mb-3">
+            <label for="birthDate" class="form-label">Birth Date</label>
+            <input name="birthDate" [(ngModel)]="child.birthdate" class="form-control" required type="date" #birthDate="ngModel">
+            <div *ngIf="birthDate.invalid && birthDate.touched" class="text-danger">Birth Date is required.</div>
+          </div>
+          <div class="mb-3">
+            <label for="placeOfBirth" class="form-label">Place of Birth</label>
+            <input name="placeOfBirth" [(ngModel)]="child.place_of_birth" class="form-control" required #placeOfBirth="ngModel">
+            <div *ngIf="placeOfBirth.invalid && placeOfBirth.touched" class="text-danger">Place of Birth is required.</div>
+          </div>
+          <div class="mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <input name="gender" [(ngModel)]="child.gender" class="form-control" required #gender="ngModel">
+            <div *ngIf="gender.invalid && gender.touched" class="text-danger">Gender is required.</div>
+          </div>
+          <div class="mb-3">
+            <label for="currentResidence" class="form-label">Current Residence</label>
+            <input name="currentResidence" [(ngModel)]="child.current_residence" class="form-control" required #currentResidence="ngModel">
+            <div *ngIf="currentResidence.invalid && currentResidence.touched" class="text-danger">Current Residence is required.</div>
+          </div>
+          <div class="mb-3">
+            <label for="photo" class="form-label">Photo</label>
+            <input type="file" (change)="onFileChange($event)" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Submit</button>
+          <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

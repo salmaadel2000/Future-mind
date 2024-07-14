@@ -1,0 +1,54 @@
+<aside class="sidebar">
+  <div class="logo">
+    <a class="navbar-brand" href="">
+      <img src="../../../../images/logo.png" alt="Logo" class="d-inline-block align-top">
+    </a>
+  </div>
+  <nav>
+    <ul>
+      <li>
+        <a [routerLink]="['/parent-dashboard', profileId]">
+          <i class="fas fa-tachometer-alt"></i> Dashboard
+        </a>
+      </li>
+      <li>
+        <a routerLink="/parent-nav">
+          <i class="fas fa-home"></i> Home
+        </a>
+      </li>
+      <li class="nav-item dropdown" [class.show]="isDropdownOpen['children']">
+        <a class="nav-link dropdown-toggle" (click)="toggleDropdown('children')" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-users"></i> Children
+        </a>
+        <div class="dropdown-menu" [class.show]="isDropdownOpen['children']" aria-labelledby="childrenDropdown">
+          <a class="dropdown-item" [routerLink]="['/parent-nav/parent-child', profileId]">
+            <i class="fas fa-check"></i> Accepted Children
+          </a>
+          <a class="dropdown-item" [routerLink]="['/parent-nav/pend-child', profileId]">
+            <i class="fas fa-clock"></i> Pending Children
+          </a>
+        </div>
+      </li>
+      <li>
+        <a routerLink="/parent-nav/add-child">
+          <i class="fa fa-plus"></i> Add Child
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/parent-nav/parent-profile', profileId]">
+          <i class="fas fa-bell"></i> Profile
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/parent-nav/edit-parent', profileId]">
+          <i class="fa fa-edit"></i> Edit Profile
+        </a>
+      </li>
+      <li>
+        <a routerLink="/login" (click)="logout()">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>

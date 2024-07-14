@@ -1,0 +1,68 @@
+<div class="main">
+  <img src="../../../../images/Oval 2.png" class="frist-img"/>
+  <img src="../../../../images/Oval 3 (1).png" class="sec-img"/>
+  <img src="../../../../images/Oval 3.png" class="thered-img"/>
+  <ng-container *ngIf="child; else noChild">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 mb-3">
+          <div class="child-details card">
+            <div class="card-header d-flex align-items-center justify-content-center">
+              <div class="d-flex align-items-center">
+                <img [src]="'http://127.0.0.1:8000/' + child.photo" class="rounded-circle" alt="{{ child.full_name }}">
+                <div class="info ms-3">
+                  <h5 class="card-title mb-0">{{ child.full_name }}</h5>
+                  <p class="text-muted mb-0">{{ calculateAge(child.birthdate) }} years</p>
+                  <small class="text-muted">Last edited Friday at 13:46</small>
+                </div>
+              </div>
+              <div class="action-links">
+                <a [routerLink]="['/admin-dashboard/child-grade', child.id]" class="grade-link me-4">
+                  <i class="fas fa-graduation-cap"></i> Grade
+                </a>
+                <a [routerLink]="['/admin-dashboard/child-activites', child.id]" class="grade-link mr-2">
+                   Activity
+                </a>
+              </div>
+            </div>
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">General Information</h6>
+              <div class="list-group list-group-flush">
+                <div class="list-group-item">
+                  <strong>Name:</strong> {{ child.full_name }}
+                </div>
+                <div class="list-group-item">
+                  <strong>Display name:</strong> {{ child.full_name }}
+                </div>
+                <div class="list-group-item">
+                  <strong>D.O.B.:</strong> {{ child.birthdate | date: 'dd/MM/yyyy' }}
+                </div>
+                <div class="list-group-item">
+                  <strong>Years:</strong> {{ calculateAge(child.birthdate) }} years
+                </div>
+                <div class="list-group-item">
+                  <strong>Gender:</strong> {{ child.gender }}
+                </div>
+                <div class="list-group-item">
+                  <strong>Home Phone:</strong> +123 456 789
+                </div>
+                <div class="list-group-item">
+                  <strong>Home address:</strong> {{ child.current_residence }}
+                </div>
+              </div>
+              <div class="back-button-container">
+                <button  Class="back-button w-50 text-center"   style="background: #f75b6b;"[routerLink]="['/admin-dashboard/students/all-students']">Back</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #noChild>
+    <div class="no-item">
+      <p class="no-grade-message">No child information available.</p>
+    </div>
+  </ng-template>
+</div>

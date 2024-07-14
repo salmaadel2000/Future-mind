@@ -1,0 +1,25 @@
+.map_sec {
+    padding: 50px 0;
+  }
+  
+  .map_inner h4,
+  .map_inner p {
+    color: #000;
+    text-align: center;
+  }
+  
+  .map_inner p {
+    font-size: 13px;
+  }
+  
+  .map_bind {
+    margin-top: 50px;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+  
+  /* Optional: Customize iframe styling */
+  .map_bind iframe {
+    border-radius: 30px;
+  }
+  

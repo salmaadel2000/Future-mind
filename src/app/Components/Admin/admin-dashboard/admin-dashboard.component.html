@@ -1,0 +1,58 @@
+<div class="admin-dashboard">
+  <aside class="sidebar">
+    <div class="logo">
+      <a class="navbar-brand" href="">
+        <img src="../../../../images/logo.png" alt="Logo" class="d-inline-block align-top">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li class="nav-item" [ngClass]="{'active': isActive('/admin-dashboard/welcome-admin')}">
+          <a routerLink="/admin-dashboard/welcome-admin"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        </li>
+        <!-- <li class="nav-item" [ngClass]="{'active': isActive('/home')}">
+          <a routerLink="/home"><i class="fas fa-home"></i> Home</a>
+        </li> -->
+        <li class="nav-item" (click)="toggleDropdown('accounts')">
+          <i class="fas fa-users"></i> Accounts <i class="fas" [ngClass]="{'fa-angle-down': !isDropdownOpen['accounts'], 'fa-angle-up': isDropdownOpen['accounts']}"></i>
+        </li>
+        <ul *ngIf="isDropdownOpen['accounts']" class="dropdown">
+          <li class="nav-item" [ngClass]="{'active': isActive('/admin-dashboard/accounts/all-parents')}">
+            <a routerLink="/admin-dashboard/accounts/all-parents">All parents</a>
+          </li>
+          <li class="nav-item" (click)="toggleDropdown('students')">
+            <i class="fas fa-user-graduate"></i> Students <i class="fas" [ngClass]="{'fa-angle-down': !isDropdownOpen['students'], 'fa-angle-up': isDropdownOpen['students']}"></i>
+          </li>
+          <ul *ngIf="isDropdownOpen['students']" class="dropdown">
+            <li class="nav-item" [ngClass]="{'active': isActive('/admin-dashboard/students/student-applicants')}">
+              <a routerLink="/admin-dashboard/students/student-applicants">Student Applicants</a>
+            </li>
+            <li class="nav-item" [ngClass]="{'active': isActive('/admin-dashboard/students/all-students')}">
+              <a routerLink="/admin-dashboard/students/all-students">All Students</a>
+            </li>
+          </ul>
+        </ul>
+        <li class="nav-item" (click)="toggleDropdown('curriculums')" [ngClass]="{'active': isActive('/admin-dashboard/curriculums')}">
+          <i class="fas fa-book"></i> Curriculums <i class="fas" [ngClass]="{'fa-angle-down': !isDropdownOpen['curriculums'], 'fa-angle-up': isDropdownOpen['curriculums']}"></i>
+        </li>
+        <ul *ngIf="isDropdownOpen['curriculums']" class="dropdown">
+          <li class="nav-item" [ngClass]="{'active': isActive('/admin-dashboard/levels')}">
+            <a routerLink="/admin-dashboard/levels"><i class="fas fa-bars"></i> Levels</a>
+          </li>
+          <li class="nav-item" [ngClass]="{'active': isActive('/admin-dashboard/subjects')}">
+            <a routerLink="/admin-dashboard/subjects"><i class="fas fa-book-open"></i> Subjects</a>
+          </li>
+        </ul>
+        <li class="nav-item" [ngClass]="{'active': isActive('/admin-dashboard/activities')}">
+          <a routerLink="/admin-dashboard/activities"><i class="fas fa-running"></i> Activities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/logout" (click)="logout()">Log out</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

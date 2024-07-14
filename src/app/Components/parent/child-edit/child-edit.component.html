@@ -1,0 +1,78 @@
+<div class="main">
+  <img src="../../../../images/pen.png" class="frist-img"/>
+  <img src="../../../../images/slic.png" class="sec-img"/>
+  <img src="../../../../images/tringle.png" class="thered-img"/>
+<div class="container ">
+  <div class="col-6 custom-img">
+  <img src="../../../../images/girl-thinking-books-dog.png" class="girl-think " />
+  </div>
+
+  <div class="card  col-6">
+    <div class="card-header">
+      <h2>Edit Child Profile</h2>
+    </div>
+    <div class="card-body">
+      <div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
+      <form (ngSubmit)="submit(EditForm)" #EditForm="ngForm">
+        <div class="form-group">
+          <div class="profile-photo-section">
+            <img [src]="fileData" alt="Profile Image" class="profile-photo" *ngIf="fileData">
+          </div>          
+          <label for="full_name" class="form-label">Full Name</label>
+          <input type="text" id="full_name" name="full_name" [(ngModel)]="child.full_name" #full_name="ngModel" class="form-control" required>
+          <div *ngIf="EditForm.submitted && full_name.invalid" class="text-danger">
+            Full Name is required.
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col">
+            <label for="birthdate" class="form-label">Birthdate</label>
+            <input type="date" id="birthdate" name="birthdate" [(ngModel)]="child.birthdate" #birthdate="ngModel" class="form-control" required>
+            <div *ngIf="EditForm.submitted && birthdate.invalid" class="text-danger">
+              Birthdate is required.
+            </div>
+          </div>
+          <div class="col">
+            <label for="place_of_birth" class="form-label">Place of Birth</label>
+            <input type="text" id="place_of_birth" name="place_of_birth" [(ngModel)]="child.place_of_birth" #place_of_birth="ngModel" class="form-control" required>
+            <div *ngIf="EditForm.submitted && place_of_birth.invalid" class="text-danger">
+              Place of Birth is required.
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col">
+            <label for="gender" class="form-label">Gender</label>
+            <select id="gender" name="gender" [(ngModel)]="child.gender" #gender="ngModel" class="form-control" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            <div *ngIf="EditForm.submitted && gender.invalid" class="text-danger">
+              Please select a gender.
+            </div>
+          </div>
+          <div class="col">
+            <label for="current_residence" class="form-label">Current Residence</label>
+            <input type="text" id="current_residence" name="current_residence" [(ngModel)]="child.current_residence" #current_residence="ngModel" class="form-control" required>
+            <div *ngIf="EditForm.submitted && current_residence.invalid" class="text-danger">
+              Current Residence is required.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="photo" class="form-label">Change Profile Picture</label>
+          <input type="file" id="photo" name="photo" (change)="onFileSelected($event)" class="form-control">
+          <div *ngIf="EditForm.submitted && !child.photo" class="text-danger">
+            Please select an image file.
+          </div>
+        </div>
+        <div class="register-button-container">
+          <button type="submit" [disabled]="EditForm.invalid" class="btn btn-primary">Save</button>
+          <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

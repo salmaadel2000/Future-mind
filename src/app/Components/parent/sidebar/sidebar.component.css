@@ -1,0 +1,96 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  .logo img {
+    width: 90px; 
+    height: auto; 
+    display: block;
+    margin: 0;
+    padding-bottom: 20px;
+  }
+  
+  .admin-dashboard {
+    display: flex;
+    height: 100%;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #c0e4fc; 
+    padding: 5px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+  }
+  
+  
+  .sidebar nav ul {
+    list-style: none;
+    margin-left: 0px;
+    
+  }
+  
+  .sidebar nav ul li {
+    margin: 15px 0;
+    cursor: pointer;
+    padding: 8px;
+  }
+  
+  .sidebar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .sidebar nav ul li i {
+    margin-right: 10px;
+  }
+  
+  .dropdown {
+    list-style: none;
+    padding-left: 20px;
+  }
+  
+  .dropdown li {
+    margin: 5px 0;
+  }
+  
+ .fa-chevron-right {
+    margin-left: 10px;
+ }
+  
+  .main-content {
+    margin-left: 180px; /* نفس عرض السايد بار */
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+    height: 100vh; /* تأكد من أن المحتوى يمتد بطول الصفحة */
+  }
+  /* Add this style to your existing CSS file */
+  .dropdown{
+    position: relative;
+  }
+.dropdown-menu {
+  position: absolute;
+  right: 10px;
+  background-color: #a8cbe2; /* Dark blue background color */
+  color: #333; /* White text color */
+  padding: 10px; /* Adjust padding as needed */
+  border-radius: 5px; /* Rounded corners for the dropdown menu */
+  box-shadow: 0 0 10px rgba(46, 30, 100, 0.1);
+}
+
+.dropdown-menu a {
+  color: #333; /* White text color for dropdown links */
+}
+
+.dropdown-menu a:hover {
+  background-color: #95b2c5; /* Darker blue on hover */
+}

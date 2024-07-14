@@ -1,0 +1,65 @@
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playwrite+FR+Trad&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+US+Modern:wght@100..400&family=Rubik&display=swap" rel="stylesheet">
+
+
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="title">Levels & Students</h2>
+
+      <div class="header-actions">
+        <div class="search-container">
+          <button class="btn btn-primary add-level-btn" (click)="addLevel()">Add Level</button>
+          <input type="text" placeholder="Search" [(ngModel)]="searchTerm" (input)="searchChildren()">
+          <i class="fas fa-search"></i>
+        </div>
+      </div>
+
+      <div class="btn-group filter-options" role="group" aria-label="Curriculum Levels">
+        <button *ngFor="let level of levels; let i = index"
+                class="btn filter-btn"
+                [ngClass]="{
+                  'btn-primary': i === 0,
+                  'btn-secondary': i === 1,
+                  'btn-success': i === 2,
+                  'btn-danger': i === 3
+                }"
+                (click)="selectLevel(level, i)">
+          {{ level.level }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="selectedLevel">
+    <div class="student-list fixed-table table-responsive" *ngIf="filteredStudents.length > 0; else noStudents">
+      <table class="table fixed-table table-container" [ngClass]="tableClass">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Birth Date</th>
+            <th>Place of Birth</th>
+            <th>Gender</th>
+            <th>Current Residence</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of filteredStudents">
+            <td>{{ student.full_name }}</td>
+            <td>{{ student.birthdate }}</td>
+            <td>{{ student.place_of_birth }}</td>
+            <td>{{ student.gender }}</td>
+            <td>{{ student.current_residence }}</td>
+            <td>
+              <button class="btn btn-primary btn-yara" (click)="viewStudent(student)">Manage</button>
+              <button class="btn btn-danger btn-yara" (click)="deleteStudent(student.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #noStudents>
+      <p class="text-center mt-5">There's no students in this level.</p>
+    </ng-template>
+  </div>
+</div>

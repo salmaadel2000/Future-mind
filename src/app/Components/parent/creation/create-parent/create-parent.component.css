@@ -1,0 +1,172 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.welcome {
+  left: 50px;
+  top: 50px;
+  position: absolute;
+  font-size: 30px;
+  color: rgb(15, 15, 115);
+  text-align: center;
+  margin-top: 20px;
+  animation: welcomeAnimation 2s ease-in-out;
+}
+
+@keyframes welcomeAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main {
+  position: relative;
+  background-color: #e7f4fd;
+  width: 100%;
+}
+
+.card {
+  background-color: #007bff;
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: auto;
+}
+
+.card-header {
+  background-color: #97a4eb;
+  color: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.card-header h3 {
+  margin: 0;
+  color: #fff;
+}
+
+.card-body {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.text-danger {
+  color: #d9534f;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+.buttons{
+  position: relative;
+}
+
+.btn-primary {
+  background-color: #97a4eb;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  top: 33px;
+}
+
+.btn-primary:hover {
+  background-color: #6e79bd;
+}
+
+@media (max-width: 1222px) {
+  .parent {
+    width: 30%;
+  }
+
+  .card {
+    width: 70%;
+  }
+}
+
+@media (max-width: 969px) {
+  .parent {
+    display: none;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .card-header, .card-body {
+    padding: 10px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .row {
+    flex-direction: column;
+  }
+
+  .col-md-6 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 95%;
+  }
+
+  .welcome {
+    font-size: 24px;
+    left: 20px;
+    top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 100%;
+  }
+
+  .welcome {
+    font-size: 20px;
+    left: 10px;
+    top: 10px;
+  }
+}

@@ -1,0 +1,154 @@
+.main{
+  background-color: #e7f4fd;
+  position: relative;
+}
+.container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+ 
+}
+.frist-img , .sec-img ,.thered-img{
+position: absolute;
+width: 100px !important;
+height: 100px !important;
+}
+.sec-img{
+  top: 100px;
+  left: 30px;
+}
+.frist-img{
+  top: 300px;
+  left: 640px;
+}
+.thered-img{
+  top: 600px;
+  left: 200px;
+}
+.girl-think {
+  max-width: 70%;
+  height: auto;
+  box-shadow: 1;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-header {
+  width: 100%;
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+.card-header {
+  background-color: #97a4eb;
+  color: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.card-header h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.card-body {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.profile-photo-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 6px solid #c3ebf4;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.text-danger {
+  color: #d9534f;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: #97a4eb;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #6e79bd;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  margin-left: 20px;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+.custom-img{
+  display: flex;
+  align-items: center;
+}
+.register-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .girl-think, .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

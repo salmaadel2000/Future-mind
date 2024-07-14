@@ -1,0 +1,30 @@
+<div class=" table-container" >
+<ng-container *ngIf="activities.length > 0; else noActivities">
+
+    <div class="main">
+    <h2 class="text-center">Activities</h2>
+ <table class="table table-bordered grade-table">
+          <thead>
+            <tr>
+              <th>Activity Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let activity of activities; ">
+              <td>{{ activity.activity_name }}</td>
+              <td>{{ activity.description }}</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+ 
+    </ng-container>
+  <ng-template #noActivities>
+    <div class="no-item">
+    <div class="no-grade-message">
+      No activities available.
+    </div>
+    </div>
+  </ng-template>
+  </div>

@@ -1,0 +1,68 @@
+/* Add this CSS to your stylesheet */
+
+.levels-section {
+  margin: 20px;
+  text-align: center;
+  height: 90vh;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.one, .two {
+  flex: 1 1 48%;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.one {
+  background: #D6E2FBFF;
+}
+
+.two {
+  background: #FFF0B2FF;
+  font-family: 'Arial', sans-serif; /* Change 'Arial' to your desired font */
+  font-size: 18px; /* Set the font size */
+  text-align: center; /* Center the text */
+  padding: 20px;
+  line-height: 1.6; /* Add line height for better readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  border: 1px solid #ccc; /* Add a border */
+}
+
+.two p {
+  margin: 0;
+}
+
+.two strong {
+  color: #d9534f; /* Change the color of the strong text */
+  font-weight: bold;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Add border radius to the video */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the video */
+}
+
+@media (max-width: 768px) {
+  img{
+    width: 400px !important;
+}
+  .container {
+    flex-direction: column;
+  }
+
+  .one, .two {
+    flex: 1 1 100%;
+  }
+}

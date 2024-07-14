@@ -1,0 +1,81 @@
+/* about-us.component.css */
+.about-us {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .section-care, .section-parent, .section-promise, .section-team {
+    margin-bottom: 40px;
+    margin-top: 50px;
+  }
+  
+  .section-care .content, .section-parent .content, .section-promise .promise-content, .section-team .team-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .section-care h2, .section-parent h2, .section-promise h2, .section-team h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #222;
+    font-weight: bold;
+  }
+  
+  .section-care p, .section-parent p, .section-promise p, .section-team p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .image-container, .promise-image, .team-image {
+    flex: 1;
+    text-align: right;
+    margin-left: 20px;
+  }
+  
+  .image-container img, .promise-image img, .team-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+  
+  .text, .promise-text, .team-text {
+    flex: 2;
+  }
+  
+  .promise-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  .icon-item {
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .icon-item img {
+    max-width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .icon-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #222;
+    font-weight: bold;
+  }
+  
+  .icon-item p {
+    font-size: 16px;
+    margin: 0;
+    color: #555;
+  }
+  

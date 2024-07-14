@@ -1,0 +1,23 @@
+<div class="table-container main-content">
+  <table class="table table-bordered grade-table">
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subject of uniqueSubjects">
+        <td>{{ subject.subject_name }}</td>
+        <td>
+          <button
+            class="btn btn-primary"
+            (click)="subject.id !== undefined && viewGrades(subject.id)"
+          >
+            View
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

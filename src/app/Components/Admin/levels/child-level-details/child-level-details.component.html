@@ -1,0 +1,34 @@
+<div class="table-container main-content">
+  <ng-container *ngIf="childName">
+    <h2 class="text-center">Mange Grades for {{ childName }} </h2>
+  </ng-container>
+  <ng-container *ngIf="subjects.length > 0; else noSubjects">
+    <div class="main">
+      <table class="table table-bordered grade-table">
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let subject of subjects">
+            <td>{{ subject.subject_name }}</td>
+            <td>
+              <button class="btn btn-primary mr-2" *ngIf="subject.id !== undefined" (click)="viewGrades(subject)">View Grades</button>
+              <button class="btn btn-secondary mr-2" *ngIf="subject.id !== undefined" (click)="openAddGradeModal(subject)">Add Grade</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-center mt-2">
+        <button class="btn btn-secondary w-100" [routerLink]="['/admin-dashboard/levels']">Back</button>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #noSubjects>
+    <div class="no-item">
+      <p class="no-grade-message">No subjects yet.</p>
+    </div>
+  </ng-template>
+</div>

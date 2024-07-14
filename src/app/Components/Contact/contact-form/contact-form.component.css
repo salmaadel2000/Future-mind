@@ -1,0 +1,63 @@
+.contact_us {
+    background-color: #f1f1f1;
+    padding: 120px 0;
+  }
+  
+  .contact_inner {
+    background-color: #fff;
+    position: relative;
+    box-shadow: 20px 22px 44px #cccc;
+    border-radius: 25px;
+  }
+  
+  .contact_field {
+    padding: 60px 30px 90px 100px;
+  }
+  
+  .contact_field h3 {
+    color: #000;
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .contact_field p {
+    color: #000;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+  }
+  
+  .form-control {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .form-control:focus {
+    box-shadow: none;
+    outline: none;
+    border-bottom: 2px solid #007bff;
+  }
+  
+  .contact_form_submit {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    width: 30%;
+    margin-top: 25px;
+    border-radius: 35px;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+  
+  @media (max-width: 767px) {
+    .contact_field {
+      padding: 40px 20px 60px 20px;
+    }
+  }
+  

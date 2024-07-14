@@ -1,0 +1,152 @@
+/* Main Container */
+.main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('https://img.freepik.com/free-psd/school-elements-composition_23-2150572919.jpg?size=626&ext=jpg&ga=GA1.1.853908403.1718451408&semt=ais_user');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+.frist-img , .sec-img ,.thered-img{
+    position: absolute;
+    width: 100px !important;
+    height: 100px !important;
+    }
+    .sec-img{
+      top: 50px;
+      right: 450px;
+    }
+    .frist-img{
+      top: 300px;
+      right: 100px;
+    }
+    .thered-img{
+      top: 600px;
+      left: 200px;
+    }
+
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(227, 240, 249, 0.4); /* Adjust overlay opacity as needed */
+    pointer-events: none;
+    z-index: 1; /* Ensure the overlay is above the background */
+}
+.child-details {
+    width: 100%;
+    max-width: 90%;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2; /* Ensure cards are above the overlay */
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    background: #D6E2FB;
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+}
+a {
+    text-decoration: none;
+  }
+  
+.card-header img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-header .info {
+    margin-left: 20px;
+}
+
+.card-header .card-title {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.card-header .text-muted {
+    color: #888;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.list-group-item strong {
+    color: #555;
+}
+
+.no-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.no-grade-message {
+    color: #d9534f;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 20px;
+    font-size: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 4px;
+}
+
+/* Responsive Adjustments */
+ @media (max-width: 768px) {
+    .main {
+        padding: 10px;
+    }
+    .child-details {
+        max-width: 100%;
+    }
+    .card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .card-header img {
+        margin-bottom: 10px;
+    }
+    .card-header .info {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .row-cols-md-2 > .col {
+        flex: 0 0 100%; /* Ensures one child per row on small screens */
+        max-width: 100%;
+    }
+} 

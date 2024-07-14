@@ -1,0 +1,30 @@
+<div *ngIf="parent" class="parent-details">
+    <div class="profile-header">
+      <div class="profile-image">
+        <img src="../../../../images/Image (1).png" alt="{{ parent.first_name }} {{ parent.last_name }}">
+      </div>
+      <div class="profile-info">
+        <h2>{{ parent.first_name }} {{ parent.last_name }}</h2>
+        <p>{{ parent.job_title }}</p>
+        <p class="job-success">100% Job Success</p>
+      </div>
+    </div>
+    <div class="overview">
+      <h3>Overview</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in neque et nisl.</p>
+    </div>
+    <div class="details">
+      <div class="personal-details">
+        <h4>Personal Data</h4>
+        <p>Home Phone: <strong>{{ parent.home_phone }}</strong></p>
+        <p>Address: <strong>{{ parent.address }}</strong></p>
+      </div>
+      <div class="work-details">
+        <h4>Work Data</h4>
+        <p>Work Phone: <strong>{{ parent.work_phone }}</strong></p>
+        <!-- <p>D.O.B.: <strong>{{ parent.dob }}</strong></p> -->
+        <p>Education: <strong>{{ parent.educational_qualification }}</strong></p>
+      </div>
+
+    </div>
+  </div>

@@ -1,0 +1,116 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto; /* Center the container horizontally */
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .main{
+    background-color: #e7f4fd;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-image: url(../../../../images/photo_back.jpg); */
+  }
+  .main-img{
+    height: 500px;
+    position: absolute;
+    top: 100px;
+  }
+  .frist-img , .sec-img ,.thered-img{
+    position: absolute;
+    width: 130px !important;
+    height: 130px !important;
+    z-index: 2;
+    }
+  .sec-img{
+    top: 50px;
+    right: 300px;
+  }
+  .frist-img{
+    top: 300px;
+    right: 50px;
+  }
+  .thered-img{
+    top: 400px;
+    right: 300px;
+  }
+  .buttons{
+    position: relative;
+  }
+  .card {
+    z-index: 2;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .card-header {
+    background-color: #97a4eb;
+    color:white;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+  .btn-secondary{
+    position: absolute;
+    top: 30px;
+    left: 100px;
+  }
+  .card-header h2 {
+    margin: 0;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    width: calc(100% - 2px); /* Adjust for border width */
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  .text-danger {
+    color: #d9534f;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+  }
+  
+  .btn-primary {
+    position: absolute;
+    top: 30px;
+    background-color: #97a4eb;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #6e79bd;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 20px;
+  }

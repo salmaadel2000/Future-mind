@@ -1,0 +1,62 @@
+<div class="main">
+  <h2 class="add-welcome">You Can Add Your Child Now  !!</h2>
+  <img src="../../../../../images/Screenshot_2024-06-27_212737-removebg-preview.png" class="frist-img"/>
+    <img src="../../../../../images/Screenshot_2024-06-27_212747-removebg-preview.png" class="sec-img"/>
+    <img src="../../../../../images/Screenshot_2024-06-27_212752-removebg-preview.png" class="thered-img"/>
+
+  <img src="../../../../../images/child-background.gif" class="baby"/>
+  <div class="card">
+    <div class="card-header">
+      <h2>Add Child</h2>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input name="fullName" [(ngModel)]="child.full_name" class="form-control" required #fullName="ngModel">
+            <div *ngIf="fullName.invalid && fullName.touched" class="text-danger">Full Name is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="birthDate" class="form-label">Birth Date</label>
+            <input name="birthDate" [(ngModel)]="child.birthdate" class="form-control" required type="date" #birthDate="ngModel">
+            <div *ngIf="birthDate.invalid && birthDate.touched" class="text-danger">Birth Date is required.</div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="placeOfBirth" class="form-label">Place of Birth</label>
+            <input name="placeOfBirth" [(ngModel)]="child.place_of_birth" class="form-control" required #placeOfBirth="ngModel">
+            <div *ngIf="placeOfBirth.invalid && placeOfBirth.touched" class="text-danger">Place of Birth is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="gender" class="form-label">Gender</label>
+            <select name="gender" [(ngModel)]="child.gender" class="form-control" required #gender="ngModel">
+              <option value="" disabled selected>Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            
+            <div *ngIf="gender.invalid && gender.touched" class="text-danger">Gender is required.</div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-12">
+            <label for="currentResidence" class="form-label">Current Residence</label>
+            <input name="currentResidence" [(ngModel)]="child.current_residence" class="form-control" required #currentResidence="ngModel">
+            <div *ngIf="currentResidence.invalid && currentResidence.touched" class="text-danger">Current Residence is required.</div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-12">
+            <label for="photo" class="form-label">Photo</label>
+            <input type="file" (change)="onFileChange($event)" class="form-control">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Submit</button>
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+      </form>
+    </div>
+  </div>
+</div>

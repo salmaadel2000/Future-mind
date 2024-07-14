@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <app-create-parent *ngIf="step === 1" [userId]="userId" (next)="nextStep($event)"></app-create-parent>
+          <app-create-child *ngIf="step === 2" [parentId]="parentId" (finish)="onFinish()"></app-create-child>
+          <button *ngIf="step > 1" class="btn btn-secondary mt-3" (click)="prevStep()">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

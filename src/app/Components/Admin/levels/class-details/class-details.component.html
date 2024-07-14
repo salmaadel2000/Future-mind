@@ -1,0 +1,77 @@
+<div class="main-content" >
+  <header class="header">
+
+  </header>
+
+  <section class="class-details">
+    <h3>Subjects</h3>
+    <ul>
+      <li *ngFor="let subject of subjects">
+        {{ subject.subject_name }}
+      </li>
+    </ul>
+
+    <h3>Children</h3>
+    <div class="children-list">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Birth Date</th>
+            <th>Gender</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let child of childrenInClass">
+            <td>{{ child.id }}</td>
+            <td>{{ child.full_name }}</td>
+            <td>{{ child.birthdate }}</td>
+            <td>{{ child.gender }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="viewChild(child)">View</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{selectedChild?.full_name}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="info-section">
+            <h3>Grades</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Grade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let subjectId of getChildGradeKeys()">
+                  <td>{{ getSubjectName(subjectId) }}</td>
+                  <td>
+                    <input [(ngModel)]="childGrades[subjectId].grade" type="number" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="updateGrades()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

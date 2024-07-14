@@ -1,0 +1,267 @@
+General Styles
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+.main-content {
+  width: 100% !important;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 20px;
+  background: linear-gradient(
+      rgba(146, 165, 179, 0.4),
+      rgba(146, 165, 179, 0.4)
+    ),
+    url('https://img.freepik.com/free-photo/colorful-school-accessories-corner-white-background_23-2148050642.jpg?t=st=1719750907~exp=1719754507~hmac=3cfd4ef6ef2fd052483bd0e51c1b93a1d7c915ca10de28f18737fbf208a1d484&w=740');
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.main-content > * {
+  position: relative;
+  z-index: 2; /* Ensure content is above the overlays */
+}
+
+/*
+.main-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(146, 165, 179, 0.4);
+  pointer-events: none;
+} */
+
+.header {
+  display: flex;
+  justify-content: flex-end; /* محاذاة العناصر إلى اليمين */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header .header-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Ensure the buttons wrap on smaller screens */
+}
+
+.header .header-actions button {
+  margin: 5px; /* Reduce margin for better spacing */
+  background-color: #65c7fc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-size: 14px; /* تعديل حجم النص */
+  flex: 1 1 auto; /* Allow buttons to resize */
+  width: auto;
+}
+
+.header .header-actions button:hover {
+  background-color: #004494;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 20px;
+  width: 300px; /* Increase search bar width */
+  flex: 1 1 auto; /* Allow search container to resize */
+}
+
+.search-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+
+}
+
+.search-container i {
+  position: absolute;
+  right: 10px;
+  color: #888;
+}
+
+.parent-list {
+  width: 100%;
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+.parent-list table {
+  width: 100%;
+  min-width: 600px; /* Ensure minimum width for better readability */
+  border-collapse: collapse;
+}
+
+.parent-list th,
+.parent-list td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: center; /* Center text horizontally */
+  vertical-align: middle !important; /* Center text vertically */
+  background-color: #ffffff; /* Ensure all cells have a white background */
+  Z-index:2 !important;
+}
+
+.parent-list th {
+  background-color: #ffce71;
+  font-weight: bold;
+}
+
+
+.btn, .view-btn, .btn-primary, .btn-secondary, .btn-success, .btn-danger, .add-level-btn {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 14px; /* حجم النص الموحد */
+  width: 80px; /* Ensure buttons have the same width */
+  display:inline-table;
+}
+
+.btn:hover, .view-btn:hover, .btn-primary:hover, .btn-secondary:hover, .btn-success:hover, .btn-danger:hover, .add-level-btn:hover {
+  opacity: 0.8;
+}
+
+.btn-primary {
+  background-color: #65c7fc;
+  color: white;
+
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-success, .add-level-btn {
+  background-color: #8cdc54;
+  color: white;
+  width: 110px;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+
+
+.info-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the cards */
+  margin-bottom: 50px;
+  margin: 30px auto; /* Center the container */
+}
+
+.info-cards .card {
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  flex: 1 1 calc(33.33% - 20px);
+  margin: 10px;
+  text-align: center;
+  font-weight: 100;
+  font-size: 100px;
+
+  width: 900px;
+  height: 110;
+}
+
+.info-cards .card:first-child {
+  background-color: #fcf6f7;
+}
+
+.info-cards .card:nth-child(2) {
+  background-color: #f1edf7;
+}
+
+.info-cards .card:nth-child(3) {
+  background-color: #e6f1f7;
+}
+
+.info-cards .card .btn-primary {
+  background-color: #65c7fc;
+  border-color: #65c7fc;
+  padding: 5px;
+  margin: auto;
+  margin-top: 5px;
+}
+
+.info-cards .card .btn-primary:hover {
+  background-color: #7ea6d4;
+  border-color: #70a4df;
+}
+
+.title {
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  color: #8a8c8d;
+  font-weight: 400;
+  font-style: italic;
+  text-shadow: 1px 1px 1px #bbbbbb;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+/* Responsive Table Styles */
+@media (max-width: 768px) {
+  .header .header-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    }
+
+  .header .header-actions .btn {
+    margin: 5px 0;
+    width: 100%; /* Ensure buttons are full width on small screens */
+  }
+
+  .search-container {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .parent-list table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    }
+
+  .parent-list th,
+  .parent-list td {
+    display: inline-block;
+    width: auto;
+    text-align: left;
+  }
+
+  .parent-list th {
+    text-align: left;
+  }
+
+  .info-cards .card {
+    flex: 1 1 100%; /* Full width on small screens */
+  }
+}
+
+.table-container{
+  height: 400px;
+  overflow-y: scroll;
+}
+

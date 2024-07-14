@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-center">
+
+           <app-register-form *ngIf="step === 1" (next)="nextStep($event)"></app-register-form>
+          <app-parent-registration *ngIf="step === 2" [userId]="userId" (next)="nextStep($event)"></app-parent-registration>
+          <app-child-registration *ngIf="step === 3" [parentId]="parentId" (finish)="onFinish()"></app-child-registration> 
+           <!-- <button *ngIf="step > 1" class="btn btn-secondary mt-3" (click)="prevStep()"></button> -->
+
+        </div>
+
+       
+
+   </div>
+

@@ -1,0 +1,52 @@
+.main-content {
+    margin-left: 80px;
+    padding: 20px;
+    flex-grow: 1;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+  }
+  
+  .class-details h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .children-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .children-list th,
+  .children-list td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+  
+  .children-list th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .modal-footer .btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .modal-footer .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+  }
+  

@@ -1,0 +1,210 @@
+/* تحسين مظهر الجدول */
+.table {
+  background-color: #0086fb;
+  width: 100% !important;
+  margin: 20px 0;
+  border-collapse: collapse;
+  table-layout: auto; /* Allows table to adjust to content */
+  margin: auto;
+}
+.active{
+  width: 100%;
+
+  }
+.table thead th {
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: left;
+  padding: 12px;
+  border-bottom: 2px solid #ddd;
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.table tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap; /* Prevents text from wrapping */
+  text-overflow: ellipsis; /* Adds ellipsis if text overflows */
+  overflow: hidden;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* تحسين مظهر العناوين */
+h2 {
+  margin-top: 20px;
+  color: #333;
+}
+
+/* تحسين مظهر الحاوية */
+.container {
+  max-width: 100%; /* Increased max-width for larger table */
+  margin: 0 auto;
+  padding: 20px;
+
+}
+
+/* تحسين مظهر الأزرار */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.header-actions .btn {
+  margin-left: 10px;
+}
+
+.header-actions .action-btn {
+  width: 180px; /* عرض الزر */
+  height: 40px; /* ارتفاع الزر */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-actions .action-btn:hover {
+  background-color: #0056b3;
+}
+
+/* تحسين مظهر أزرار الإجراءات */
+.parent-list td .btn {
+  padding: 8px 12px; /* Increased padding for larger buttons */
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.parent-list td .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.parent-list td .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.parent-list td .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.parent-list td .btn:hover {
+  opacity: 0.8;
+}
+
+/* General styling */
+.main-content {
+  /* width: 110% !important; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 20px;
+  background: linear-gradient(
+      rgba(146, 165, 179, 0.4),
+      rgba(146, 165, 179, 0.4)
+    ),
+    url('https://img.freepik.com/free-photo/colorful-school-accessories-corner-white-background_23-2148050642.jpg?t=st=1719750907~exp=1719754507~hmac=3cfd4ef6ef2fd052483bd0e51c1b93a1d7c915ca10de28f18737fbf208a1d484&w=740');
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.main-content > * {
+  position: relative;
+  z-index: 2; /* Ensure content is above the overlays */
+}
+
+
+/* Media Queries for Responsive Design */
+.table-responsive {
+  overflow-x: auto; /* Allows horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header-actions .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .table tbody td {
+    display: block;
+    width: 100%;
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+    white-space: pre-wrap; /* Allow text wrapping */
+  }
+
+  .table tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 10px;
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+
+  .table tbody tr {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .table thead {
+    display: none;
+  }
+}
+
+.title{
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  color: #8a8c8d;
+  font-weight: 600;
+  font-style: italic;
+  text-shadow: 1px 1px 1px #bbbbbb;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.btn-yara{
+  background-color: #a78ff3;
+  border-color: #a78ff3;
+}
+
+.btn-blue{
+  background-color: #65c7fc;
+  border-color: #65c7fc;
+  margin-right: 4px;
+}

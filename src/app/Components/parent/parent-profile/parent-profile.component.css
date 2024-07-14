@@ -1,0 +1,78 @@
+.parent-details {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+  }
+  .profile-header {
+    display: flex;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    background-image: url('../../../../images/Image.png'); /* Example background image */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .profile-info {
+    flex-grow: 1;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background to make text readable */
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .profile-info h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #007bff;
+  }
+  
+  .profile-info p {
+    margin: 5px 0;
+  }
+  
+  .job-success {
+    font-weight: bold;
+    color: green;
+  }
+  
+  .overview, .details {
+    padding: 20px;
+  }
+  
+  .overview h3, .details h4 {
+    margin-top: 0;
+    color: #555;
+  }
+  
+  .details {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .work-details, .personal-details {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .work-details:last-child, .personal-details:last-child {
+    margin-right: 0;
+  }
+  
+  p strong {
+    color: #007bff;
+  }
+  
